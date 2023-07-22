@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fg {
+    font-family:zeyada;
+}
+input {
+    outline: none;
+}

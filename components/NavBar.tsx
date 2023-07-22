@@ -17,7 +17,7 @@ export default function NavBar({ setSearchPage }: any) {
   }, [searchText]);
   return (
     <div className="w-full bg-white">
-      <div className="flex flex-row max-w-[1300px] px-[20px] mx-auto justify-between py-4 items-center bg-white">
+      <div className="flex flex-row max-w-[1300px] px-[10px] mx-auto justify-between py-4 items-center bg-white">
         <Link href="/">
           <div className="font-[800] text-[32px]">halls</div>
         </Link>

@@ -72,7 +72,7 @@ export default function Halls() {
               })}
           </div>
         )}
-      <div className="flex flex-row max-w-[1300px] px-[20px] mx-auto justify-between gap-2 py-4 items-center">
+      <div className="flex flex-row max-w-[1300px] px-[10px] mx-auto justify-between gap-2 py-4 items-center">
         <input className="p-2 rounded bg-white h-[40px] outline-none w-[80%]" />
         <div className=" rounded flex p-1 border border-white items-center gap-2 justify-center h-[40px]">
           <svg
@@ -105,7 +105,7 @@ export default function Halls() {
           </svg>
         </div>
       </div>
-      <div className="flex flex-wrap max-w-[1300px] px-[20px] mx-auto justify-between gap-2 py-4">
+      <div className="flex flex-wrap max-w-[1300px] px-[10px] mx-auto justify-between gap-2">
         {hallList?.map((elem, index) => {
           return (
             <div
@@ -114,7 +114,7 @@ export default function Halls() {
             >
               <img
                 src={elem.images[1]}
-                className="  h-[250px] object-cover"
+                className="  h-[200px] object-cover"
                 alt="..."
               />
               <div className="flex flex-row">

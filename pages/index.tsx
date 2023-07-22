@@ -9,7 +9,7 @@ export default function Halls() {
   const [searchText, setSearchText] = useState("");
   const [typing, setTyping] = useState(false);
 
-  const [hallList, setHallList] = useState<any[]>();
+  const [hallList, setHallList] = useState<any[]>([]);
   function genArr(a: number) {
     let emptArr: any[] = [];
     for (let index = 0; index < a; index++) {
@@ -34,8 +34,8 @@ export default function Halls() {
   const router = useRouter();
   return (
     <>
-      {halls.filter((elem) => {
-        if (elem.name.toLowerCase().includes(searchText.toLowerCase())) {
+      {hallList.filter((elem) => {
+        if (elem.hallName.toLowerCase().includes(searchText.toLowerCase())) {
           return true;
         } else {
           // setTyping(false);
@@ -45,7 +45,7 @@ export default function Halls() {
         typing &&
         searchText.length != 0 && (
           <div className="absolute top-[140px] left-[20px] p-1 rounded bg-slate-400 text-black">
-            {halls
+            {hallList
               .filter((elem) => {
                 if (
                   elem.name.toLowerCase().includes(searchText.toLowerCase())
@@ -56,11 +56,12 @@ export default function Halls() {
                   return false;
                 }
               })
-              .map((elem) => {
+              .map((elem, index) => {
                 return (
                   <div
+                    key={index}
                     onClick={() => {
-                      setSearchText(elem.name);
+                      setSearchText(elem.hallName);
                       setTyping(false);
                     }}
                     className="py-1 border-b border-b-gray-500 hover:bg-gray-400 cursor-pointer"
@@ -104,18 +105,33 @@ export default function Halls() {
           </svg>
         </div>
       </div>
-      <div className="flex flex-wrap max-w-[1300px] px-[20px] mx-auto justify-between gap-2 py-4 items-center">
-        {
-          hallList?.map(elem=>{
-            return <div className="flex flex-col md:w-[32.3%] sm:w-[49%] w-full rounded overflow-hidden">
-              <img src={elem.images[1]} className="  h-[250px] object-cover" />
+      <div className="flex flex-wrap max-w-[1300px] px-[20px] mx-auto justify-between gap-2 py-4">
+        {hallList?.map((elem, index) => {
+          return (
+            <div
+              key={index}
+              className="flex flex-col md:w-[32.3%] sm:w-[49%] w-full rounded overflow-hidden"
+            >
+              <img
+                src={elem.images[1]}
+                className="  h-[250px] object-cover"
+                alt="..."
+              />
               <div className="flex flex-row">
                 <div className="font-[700] text-[18px]">{elem.hallName}</div>
               </div>
-
+              <div className="font-[400] text-[13px]">
+                <span className="font-[600]">Capacity</span>: {elem.capacity} seats{" "}
+                <span className="text-[9px]">
+                  | 240,000FCFA per day(24hours)
+                </span>
+              </div>
+              <div className="font-[400] text-[13px]">
+                <span className="font-[600]">Location</span>:{elem.locationDescription}
+              </div>
             </div>
-          })
-        }
+          );
+        })}
       </div>
     </>
   );

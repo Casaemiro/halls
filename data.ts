@@ -1,7 +1,32 @@
 export const halls = [
+     {
+    name:"Bethel Atlanta Auditorium",
+    country:"Cameroon",
+    isVerified:true,
+    owner:"Betthel Atlanta",
+    city:"Buea",
+    address:"Buea town, Buea",
+    hasCarParkingSpace:true,
+    hallArea:"900 square meters",
+    locationDescription:"Opposite Bilingual grammar schools CheckPoint Molyko. By the road and very accessible.",
+    hasSecurity:true,
+    phoneNumber:"+237675604750",
+    pricing:[
+        ['Hall','200000'],
+        ['Caution','20000'],
+        ['Hall Cleaning','25000'],
+        ['1 Chair','500'],
+        ['Generator','10000'],
+    ],
+    rating:4,
+    email:"",
+    images:["WhatsApp Image 2023-07-21 at 12.08.00(1).jpeg", "WhatsApp Image 2023-07-21 at 12.08.00.jpeg"],
+    capacity:"200",
+},
     {
         name:"St.Charles Lwanga Hall",
         country:"Cameroon",
+        isVerified:true,
         owner:"St.Charles Lwanga Catholic Church",
         city:"Buea",
         address:"CheckPoint Molyko Buea",
@@ -22,9 +47,11 @@ export const halls = [
         images:["CharlesLwanga1.jpg","CharlesLwanga2.jpg"],
         capacity:"1000",
     },
+   
     {
         name:"Frida Farms Banquet Hall",
         country:"Cameroon",
+        isVerified:true,
         city:"Buea",
         owner:"Frida Farms",
         address:"Bunduma Gate Buea",
@@ -50,6 +77,7 @@ export const halls = [
     },    {
         name:"Frida Farms White Hall",
         country:"Cameroon",
+        isVerified:false,
         city:"Buea",
         owner:"Frida Farms",
         address:"Bunduma Gate Buea",
@@ -75,6 +103,7 @@ export const halls = [
     },    {
         name:"Frida Farms Conference Hall",
         country:"Cameroon",
+        isVerified:false,
         city:"Buea",
         owner:"Frida Farms",
         address:"Bunduma Gate Buea",
@@ -100,6 +129,7 @@ export const halls = [
     },   {
         name:"Frida Farms OutDoor space",
         country:"Cameroon",
+        isVerified:true,
         city:"Buea",
         owner:"Frida Farms",
         address:"Bunduma Gate Buea",
@@ -125,6 +155,7 @@ export const halls = [
     },   {
         name:"Frida Farms Pent House",
         country:"Cameroon",
+        isVerified:false,
         city:"Buea",
         owner:"Frida Farms",
         address:"Bunduma Gate Buea",

@@ -23,7 +23,7 @@ export default function NavBar({ setSearchPage }: any) {
         </Link>
         {router.asPath != "/auth" && (
           <>
-            <div className="hidden md:flex flex-row items-center gap-2">
+            {/* <div className="hidden md:flex flex-row items-center gap-2">
               <button className="border rounded border-sky-500 p-2 text-[12px] font-[700] w-[80px]">
                 Buea
               </button>
@@ -38,17 +38,12 @@ export default function NavBar({ setSearchPage }: any) {
               <button className="border rounded p-2 text-[12px] font-[700]">
                 SEARCH
               </button>
-            </div>
+            </div> */}
             {
               <div className="hidden lg:flex flex-row gap-3">
                 <Link href={"/"}>
                   <div className=" py-2 px-3 hover:cursor-pointer hover:text-gray-500 text-[12px] font-[700]">
                     Home
-                  </div>
-                </Link>
-                <Link href={"/halls"}>
-                  <div className=" py-2 px-3 hover:cursor-pointer hover:text-gray-500 text-[12px] font-[700]">
-                    Halls
                   </div>
                 </Link>
                 <Link href={"/contact"}>
@@ -185,6 +180,7 @@ export default function NavBar({ setSearchPage }: any) {
                       <div
                         onClick={() => {
                           setMobileMenu(false);
+                          router.push('https://api.whatsapp.com/send/?phone=237681099238&text&type=phone_number&app_absent=0')
                         }}
                         className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400 rounded-t hover:bg-slate-200"
                       >

@@ -239,7 +239,7 @@ export default function Halls() {
               </div>
               <div className="font-[300] text-[14px]">{hall?.cleaningFee} FCFA</div>
             </div>
-            {hall?.pricing.map((elem:any)=><div className="flex flex-row gap-2 border-b border-b-sky-50 ">
+            {hall?.pricing?.map((elem:any)=><div className="flex flex-row gap-2 border-b border-b-sky-50 ">
               <div className="font-[700] text-[14px] w-[200px] text-gray-800">
                 {elem?.service}
               </div>

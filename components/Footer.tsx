@@ -4,29 +4,19 @@ export default function Footer() {
   return (
     <div className="flex w-[80%] mx-auto mt-[30px] flex-col border-t border-t-gray-300">
       <div className="flex flex-row gap-3 w-[90%] flex-wrap mx-auto justify-center">
-        <Link href={"/auth"}>
-          <div className=" py-2 px-3 hover:cursor-pointer text-[12px] font-[500]">
-            dashboard
-          </div>
-        </Link>
-        <Link href={"/auth"}>
+        <Link href={"/about"}>
           <div className=" py-2 px-3 hover:cursor-pointer text-[12px] font-[500]">
             about
           </div>
         </Link>
-        <Link href={"/auth"}>
+        <Link href={"/contact"}>
           <div className=" py-2 px-3 hover:cursor-pointer text-[12px] font-[500]">
             contact
           </div>
         </Link>
-        <Link href={"/auth"}>
-          <div className=" py-2 px-3 rounded hover:cursor-pointer text-[12px] font-[500]">
-            sign up
-          </div>
-        </Link>
-        <Link href={"/auth"}>
-          <div className=" py-2 px-3 rounded hover:cursor-pointer text-[12px] font-[500]">
-            sign in
+        <Link href={"/policy"}>
+          <div className=" py-2 px-3 hover:cursor-pointer text-[12px] font-[500]">
+            policy
           </div>
         </Link>
       </div>

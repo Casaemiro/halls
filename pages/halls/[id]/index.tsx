@@ -46,8 +46,9 @@ export default function Halls() {
   return (
     <>
       <div className="flex flex-row w-[90%] mx-auto overflow-x-scroll gap-2 mt-2">
-        {hall?.images.map((elem: any) => (
+        {hall?.images.map((elem: any, index:any) => (
           <img
+          key={index}
             onClick={() => {
               setShowImage(true);
               setSelectedImage(elem)
@@ -239,7 +240,7 @@ export default function Halls() {
               </div>
               <div className="font-[300] text-[14px]">{hall?.cleaningFee} FCFA</div>
             </div>
-            {hall?.pricing?.map((elem:any)=><div className="flex flex-row gap-2 border-b border-b-sky-50 ">
+            {hall?.pricing?.map((elem:any, index:any)=><div key={index} className="flex flex-row gap-2 border-b border-b-sky-50 ">
               <div className="font-[700] text-[14px] w-[200px] text-gray-800">
                 {elem?.service}
               </div>

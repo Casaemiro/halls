@@ -21,7 +21,7 @@ export default function Footer() {
         </Link>
       </div>
       <div className="flex py-3 flex-row text-[12px] gap-3 w-[80%] items-center flex-wrap mx-auto justify-center">
-       <div><span className="font-[800]">&copy;</span>copyright2023 Powered by <Link href={"/"} className="underline">AkonehSilas</Link></div>
+       <div><span className="font-[800]">&copy;</span>copyright2023 Powered by <Link href={"https://silas-website.vercel.app/"} className="underline">AkonehSilas</Link></div>
       </div>
     </div>
   );

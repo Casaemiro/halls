@@ -54,7 +54,7 @@ export default function Halls() {
               setSelectedImage(elem)
             }}
             src={elem}
-            className="rounded border object-cover border-white h-[250px] cursor-pointer "
+            className="rounded object-cover h-[250px] cursor-pointer "
           />
         ))}
 

@@ -46,12 +46,12 @@ export default function Halls() {
   return (
     <>
       <div className="flex flex-row w-[90%] mx-auto overflow-x-scroll gap-2 mt-2">
-        {hall?.images.map((elem: any, index:any) => (
+        {hall?.images.map((elem: any, index: any) => (
           <img
-          key={index}
+            key={index}
             onClick={() => {
               setShowImage(true);
-              setSelectedImage(elem)
+              setSelectedImage(elem);
             }}
             src={elem}
             className="rounded object-cover h-[250px] cursor-pointer "
@@ -145,7 +145,9 @@ export default function Halls() {
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                   Capacity:
                 </div>
-                <div className="font-[200] text-[14px]">{hall?.capacity} people</div>
+                <div className="font-[200] text-[14px]">
+                  {hall?.capacity} people
+                </div>
               </div>
               <div className="flex flex-row gap-2 border-b border-b-sky-50">
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
@@ -165,33 +167,43 @@ export default function Halls() {
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                   Indoors:
                 </div>
-                <div className="font-[300] text-[14px]">{hall?.indoors ? 'Yes' : 'No'}</div>
+                <div className="font-[300] text-[14px]">
+                  {hall?.indoors ? "Yes" : "No"}
+                </div>
               </div>
               <div className="flex flex-row gap-2 border-b border-b-sky-50">
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                   Security:
                 </div>
-                <div className="font-[300] text-[14px]">{hall?.hasSecurity ? 'Yes' : 'No'}</div>
+                <div className="font-[300] text-[14px]">
+                  {hall?.hasSecurity ? "Yes" : "No"}
+                </div>
               </div>
               <div className="flex flex-row gap-2 border-b border-b-sky-50">
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                   Additionals:
                 </div>
                 <div className="font-[300] flex flex-wrap gap-2x text-[14px]">
-                  {hall?.pricing.map((elem:any, index:number)=><span>{elem?.service},</span>)}
+                  {hall?.pricing.map((elem: any, index: number) => (
+                    <span key={index}>{elem?.service},</span>
+                  ))}
                 </div>
               </div>
               <div className="flex flex-row gap-2 border-b border-b-sky-50">
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                   Car packing space:
                 </div>
-                <div className="font-[300] text-[14px]">{hall?.hasCarParkingSpace ? 'Yes' : 'No'}</div>
+                <div className="font-[300] text-[14px]">
+                  {hall?.hasCarParkingSpace ? "Yes" : "No"}
+                </div>
               </div>
               <div className="flex flex-row gap-2 border-b border-b-sky-50">
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                   Call for booking:
                 </div>
-                <div className="font-[300] text-[14px]">{hall?.phoneNumber}</div>
+                <div className="font-[300] text-[14px]">
+                  {hall?.phoneNumber}
+                </div>
               </div>
               <div className="flex flex-row gap-2 border-b border-b-sky-50">
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
@@ -203,9 +215,7 @@ export default function Halls() {
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                   Address:
                 </div>
-                <div className="font-[300] text-[14px]">
-                {hall?.address}
-                </div>
+                <div className="font-[300] text-[14px]">{hall?.address}</div>
               </div>
             </div>
             <div className="w-[90%] bg-white rounded mt-3 overflow-hidden mx-auto max-w-[1000px]">
@@ -237,15 +247,21 @@ export default function Halls() {
               <div className="font-[700] text-[14px] w-[200px] text-gray-800">
                 Cleaning fee
               </div>
-              <div className="font-[300] text-[14px]">{hall?.cleaningFee} FCFA</div>
-            </div>
-            {hall?.pricing?.map((elem:any, index:any)=><div key={index} className="flex flex-row gap-2 border-b border-b-sky-50 ">
-              <div className="font-[700] text-[14px] w-[200px] text-gray-800">
-                {elem?.service}
+              <div className="font-[300] text-[14px]">
+                {hall?.cleaningFee} FCFA
               </div>
-              <div className="font-[300] text-[14px]">{elem?.price} FCFA</div>
-            </div>)}
-            
+            </div>
+            {hall?.pricing?.map((elem: any, index: any) => (
+              <div
+                key={index}
+                className="flex flex-row gap-2 border-b border-b-sky-50 "
+              >
+                <div className="font-[700] text-[14px] w-[200px] text-gray-800">
+                  {elem?.service}
+                </div>
+                <div className="font-[300] text-[14px]">{elem?.price} FCFA</div>
+              </div>
+            ))}
           </div>
         )}
         {tabDetails == "extras" && <div>Extras</div>}

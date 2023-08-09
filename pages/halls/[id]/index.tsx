@@ -177,9 +177,8 @@ export default function Halls() {
                 <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                   Additionals:
                 </div>
-                <div className="font-[300] text-[14px]">
-                  Generator, projector, chairs, pre and post hall-cleaning,
-                  chaffing dishes, cutlery, light decor, drinks
+                <div className="font-[300] flex flex-wrap gap-2x text-[14px]">
+                  {hall?.pricing.map((elem:any, index:number)=><span>{elem?.service},</span>)}
                 </div>
               </div>
               <div className="flex flex-row gap-2 border-b border-b-sky-50">

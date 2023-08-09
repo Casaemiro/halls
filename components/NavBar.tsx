@@ -40,7 +40,7 @@ export default function NavBar({ setSearchPage }: any) {
               </button>
             </div> */}
             {
-              <div className="hidden lg:flex flex-row gap-3">
+              <div className="hidden sm:flex flex-row gap-3">
                 <Link href={"/"}>
                   <div className=" py-2 px-3 hover:cursor-pointer hover:text-gray-500 text-[12px] font-[700]">
                     Home
@@ -60,7 +60,7 @@ export default function NavBar({ setSearchPage }: any) {
               </div>
             }
             {
-              <div className=" lg:hidden rounded w-[30px] h-[30px] bg-blue-100 flex cursor-pointer items-center justify-center">
+              <div className=" sm:hidden rounded w-[30px] h-[30px] bg-blue-100 flex cursor-pointer items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

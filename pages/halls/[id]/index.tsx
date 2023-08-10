@@ -45,7 +45,7 @@ export default function Halls() {
   const router = useRouter();
   return (
     <>
-      <div className="flex flex-row  max-w-[1200px] mx-auto px-[20px] w-full overflow-x-scroll gap-2 mt-2">
+      <div className="flex flex-row max-w-[1200px] mx-auto px-[20px] overflow-x-scroll gap-2 mt-2">
         {hall?.images.map((elem: any, index: any) => (
           <img
             key={index}

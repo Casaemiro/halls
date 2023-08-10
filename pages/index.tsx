@@ -339,7 +339,7 @@ export default function Halls() {
               >
                 <img
                   src={elem.images[1]}
-                  className="  h-[200px] object-cover"
+                  className="  h-[200px] object-cover bg-blue-50 text-transparent"
                   alt="..."
                 />
                 <div className="flex flex-row justify-between w-full">

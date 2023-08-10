@@ -67,6 +67,21 @@ export default function NavBar({ setSearchPage }: any) {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
+                  className="w-8 h-8"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+
+                {/* <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
                   className="w-6 h-6"
                   onClick={() => {
                     setMobileMenu(true);
@@ -77,7 +92,7 @@ export default function NavBar({ setSearchPage }: any) {
                     strokeLinejoin="round"
                     d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                   />
-                </svg>
+                </svg> */}
                 {mobileMenu && (
                   <div className="z-20">
                     <div
@@ -93,7 +108,7 @@ export default function NavBar({ setSearchPage }: any) {
                       <div
                         onClick={() => {
                           setMobileMenu(false);
-                          router.push('/')
+                          router.push("/");
                         }}
                         className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400 rounded-t hover:bg-slate-200"
                       >
@@ -180,7 +195,9 @@ export default function NavBar({ setSearchPage }: any) {
                       <div
                         onClick={() => {
                           setMobileMenu(false);
-                          router.push('https://api.whatsapp.com/send/?phone=237681099238&text&type=phone_number&app_absent=0')
+                          router.push(
+                            "https://api.whatsapp.com/send/?phone=237681099238&text&type=phone_number&app_absent=0"
+                          );
                         }}
                         className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400 rounded-t hover:bg-slate-200"
                       >

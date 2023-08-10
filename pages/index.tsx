@@ -74,7 +74,7 @@ export default function Halls() {
           </div>
         )}
       <div className="flex flex-row max-w-[1300px] px-[10px] mx-auto justify-between gap-2 pb-4 items-center">
-        <div className=" rounded-[8px] border flex gap-2 w-[80%] items-center px-2 border-blue-300">
+        <div className=" rounded-[8px] border flex gap-2 bg-blue-50 w-[100%] sm:w-[80%] items-center px-2 border-blue-100">
           <input
             value={searchText}
             onChange={(e) => {
@@ -99,7 +99,7 @@ export default function Halls() {
           </svg>
         </div>
 
-        <div
+        {/* <div
           onClick={() => {
             setFilter(!filter);
           }}
@@ -119,20 +119,6 @@ export default function Halls() {
               d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z"
             />
           </svg>
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-8 h-8 rounded p-1 bg-white"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
-            />
-          </svg> */}
           <div className="bg-blue-50 flex rounded-[8px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +150,7 @@ export default function Halls() {
               />
             </svg>
           </div>
-        </div>
+        </div> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

@@ -45,7 +45,7 @@ export default function Halls() {
       }).length > 0 &&
         typing &&
         searchText.length != 0 && (
-          <div className="absolute top-[140px] left-[20px] p-1 rounded bg-slate-400 text-black">
+          <div className="absolute top-[130px] left-[10px] w-[90%] md:w-[500px] p-3 gap-2 flex flex-col rounded-[8px] opacity-90 bg-blue-50 text-black">
             {hallList
               .filter((elem) => {
                 if (
@@ -65,7 +65,7 @@ export default function Halls() {
                       setSearchText(elem.hallName);
                       setTyping(false);
                     }}
-                    className="py-1 border-b border-b-gray-500 hover:bg-gray-400 cursor-pointer"
+                    className="py-1 border-b border-b-gray-300 rounded-t-[8px] px-2 hover:bg-gray-300 cursor-pointer"
                   >
                     {elem.hallName}
                   </div>

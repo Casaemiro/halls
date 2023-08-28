@@ -45,7 +45,7 @@ export default function Halls() {
   const router = useRouter();
   return (
     <>
-      <div className="flex flex-row max-w-[1200px] mx-auto px-[20px] overflow-x-scroll gap-2 mt-2">
+      <div className="flex flex-row max-w-[1200px] mx-auto px-[20px] overflow-scroll gap-2">
         {hall?.images.map((elem: any, index: any) => (
           <img
             key={index}
@@ -86,7 +86,7 @@ export default function Halls() {
         </div>
         <div className="flex flex-col md:flex-row gap-3 max-w-[1200px] justify-between mx-auto px-[20px] w-full">
           <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2 w-full">
+            <div className="flex flex-row gap-2 justify-center md:justify-start w-full">
               <div
                 onClick={() => {
                   setTab("description");
@@ -96,7 +96,7 @@ export default function Halls() {
                   doc.getElementById(prevTab).style.color = "black";
                 }}
                 id="description"
-                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[12px]"
+                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[10px]"
               >
                 Description
               </div>
@@ -109,7 +109,7 @@ export default function Halls() {
                   doc.getElementById(prevTab).style.color = "black";
                 }}
                 id="pricing"
-                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[12px]"
+                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[10px]"
               >
                 Pricing
               </div>
@@ -122,7 +122,7 @@ export default function Halls() {
                   doc.getElementById(prevTab).style.color = "black";
                 }}
                 id="extras"
-                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[12px]"
+                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[10px]"
               >
                 Extras
               </div>
@@ -135,7 +135,7 @@ export default function Halls() {
                   doc.getElementById(prevTab).style.color = "black";
                 }}
                 id="refund-policy"
-                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[12px]"
+                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[10px]"
               >
                 Refund Policy
               </div>
@@ -282,16 +282,16 @@ export default function Halls() {
             )}
           </div>
           {/* <div className="w-full bg-white rounded mt-3 overflow-hidden mx-auto max-w-[500px]"> */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d63669.23161562605!2d9.222024462730351!3d4.1559647293111155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x10613259651819a3%3A0x754210aa92e62bff!2sBuea!3m2!1d4.1559658!2d9.2632243!4m0!5e0!3m2!1sen!2scm!4v1689237704172!5m2!1sen!2scm"
-              // width="600"
-              className="w-full md:max-w-[500px] object-cover outline-none bg-white"
-              height="450"
-              // style="border:0;"
-              allowFullScreen={true}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d63669.23161562605!2d9.222024462730351!3d4.1559647293111155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x10613259651819a3%3A0x754210aa92e62bff!2sBuea!3m2!1d4.1559658!2d9.2632243!4m0!5e0!3m2!1sen!2scm!4v1689237704172!5m2!1sen!2scm"
+            // width="600"
+            className="w-full md:max-w-[500px] object-cover outline-none bg-white"
+            height="450"
+            // style="border:0;"
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
           {/* </div> */}
         </div>
       </div>

@@ -443,6 +443,12 @@ export default function Halls() {
             );
           })}
       </div>
+      {hallList?.length == 0 ||
+        (hallList == undefined && (
+          <div className="w-full flex items-center justify-center h-screen">
+            <div className="w-[50px] h-[50px] border-[#2f2d2da0] border border-t-[#fff] animate-spin rounded-full mx-auto"></div>
+          </div>
+        ))}
     </>
   );
 }

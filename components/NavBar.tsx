@@ -46,11 +46,16 @@ export default function NavBar({ setSearchPage }: any) {
                     Home
                   </div>
                 </Link>
-                <Link href={"/contact"}>
-                  <div className=" py-2 px-3 hover:cursor-pointer hover:text-gray-500 text-[12px] font-[700]">
-                    Contact
-                  </div>
-                </Link>
+                <div
+                  onClick={() => {
+                    router.push(
+                      "https://api.whatsapp.com/send/?phone=237681099238&text&type=phone_number&app_absent=0"
+                    );
+                  }}
+                  className=" py-2 px-3 hover:cursor-pointer hover:text-gray-500 text-[12px] font-[700]"
+                >
+                  Contact
+                </div>
                 <Link href={"/auth"}>
                   <div className=" bg-sky-500 py-2 px-3 hover:text-black text-sky-100 hover:bg-sky-400 rounded hover:cursor-pointer text-[12px] font-[700]">
                     Register
@@ -62,6 +67,9 @@ export default function NavBar({ setSearchPage }: any) {
             {
               <div className=" sm:hidden rounded w-[30px] h-[30px] bg-blue-100 flex cursor-pointer items-center justify-center">
                 <svg
+                  onClick={() => {
+                    setMobileMenu(true);
+                  }}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -101,7 +109,7 @@ export default function NavBar({ setSearchPage }: any) {
                       }}
                       className="bg-black fixed top-0 w-full left-0 h-screen opacity-70"
                     ></div>
-                    <div className="bg-white z-50 flex p-2 fixed flex-col h-screen gap-1 top-0 right-0 w-[300px]">
+                    <div className="bg-white z-50 flex p-2 fixed flex-col h-screen gap-3 top-0 right-0 w-[300px]">
                       <div className="font-[800] text-[24px] w-full text-center">
                         Menu
                       </div>
@@ -173,6 +181,7 @@ export default function NavBar({ setSearchPage }: any) {
                       <div
                         onClick={() => {
                           setMobileMenu(false);
+                          router.push("/policy");
                         }}
                         className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400 rounded-t hover:bg-slate-200"
                       >

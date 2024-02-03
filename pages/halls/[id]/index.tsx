@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { collection, getDoc, doc } from "firebase/firestore/lite";
 import { db } from "../../../firebase";
 import Loader from "@/components/Footer copy";
+import Head from "next/head";
 
 export default function Halls() {
   const { id } = useRouter().query;
@@ -45,8 +46,46 @@ export default function Halls() {
     doc.getElementById(tab).style.color = "white";
   }, [tab]);
   const router = useRouter();
+
+  const [copy, setCopy] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+  async function share(url: string, name: string) {
+    try {
+      await navigator.share({
+        title: name,
+        text: "Get tickets",
+        url: url,
+      });
+    } catch (err) {
+      setIsCopied(true);
+      navigator.clipboard.writeText(
+        `${process.env.NEXT_PUBLIC_APP_BASE_URL}${router.asPath}`
+      );
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 3000);
+      return err;
+    }
+  }
   return (
     <>
+      <Head>
+        <meta property={`og:title`} content={`Halls`} />
+        <meta
+          property={`og:description`}
+          content={`Follow this link to see more about ${
+            hall ? hall?.hallName : "this hall"
+          }`}
+        />
+        <meta property="og:type" content="Halls" />
+        <meta property="og:image" content={`${hall?.images[0]}`} />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
+        <meta
+          property="og:url"
+          content={`${process.env.NEXT_PUBLIC_APP_BASE_URL}${router.asPath}`}
+        />
+      </Head>
       <div className="flex flex-row max-w-[1200px] mx-auto px-[10px] overflow-scroll gap-2">
         {hall?.images.map((elem: any, index: any) => (
           <img
@@ -83,8 +122,69 @@ export default function Halls() {
         </div>
       )}
       <div className="flex flex-col gap-2 w-full">
-        <div className="font-[900] max-w-[1200px] mx-auto px-[10px] w-full text-center md:text-left text-[24px] text-sky-900">
+        <div className="font-[900] max-w-[1200px] mx-auto flex px-[10px] w-full items-center justify-between text-center md:text-left text-[24px] text-sky-900">
           {hall?.hallName}
+          <div
+            className="cursor-pointer text-sm font-[500]"
+            onClick={() => {
+              try {
+                share(
+                  `${process.env.NEXT_PUBLIC_APP_BASE_URL}${router.asPath}`,
+                  ""
+                );
+                console.log(
+                  `${process.env.NEXT_PUBLIC_APP_BASE_URL}${router.asPath}`
+                );
+              } catch (exceptionVar) {
+                setIsCopied(true);
+                navigator.clipboard.writeText(
+                  `${process.env.NEXT_PUBLIC_APP_BASE_URL}${router.asPath}`
+                );
+                setTimeout(() => {
+                  setIsCopied(false);
+                }, 3000);
+              } finally {
+                console.log("done");
+              }
+            }}
+          >
+            {!isCopied ? (
+              <div className="flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"
+                  />
+                </svg>
+              </div>
+            ) : (
+              <span className="flex items-center border border-black/20 p-1 rounded-lg justify-center gap-2">
+                link copied
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5"
+                  />
+                </svg>
+              </span>
+            )}
+          </div>
         </div>
         <div className="flex flex-col md:flex-row gap-3 max-w-[1200px] justify-between mx-auto px-[10px] w-full">
           <div className="flex flex-col gap-3">
@@ -208,7 +308,40 @@ export default function Halls() {
                     <div className="font-[300] text-[14px]">
                       {hall?.phoneNumber}
                     </div>
-                    <div className="bg-sky-500 p-2 px-4 cursor-pointer hover:bg-sky-500/60 duration-150 rounded-lg ml-auto">copy number</div>
+                    <div
+                      onClick={() => {
+                        setCopy(true);
+                        navigator.clipboard.writeText(
+                          `${process.env.NEXT_PUBLIC_APP_BASE_URL}${router.asPath}`
+                        );
+                        setTimeout(() => {
+                          setCopy(false);
+                        }, 3000);
+                      }}
+                      className="bg-sky-500 p-2 px-4 cursor-pointer hover:bg-sky-500/60 duration-150 rounded-lg ml-auto"
+                    >
+                      {!copy ? (
+                        <div className="flex">copy number</div>
+                      ) : (
+                        <span className="flex items-center justify-center gap-2">
+                          link copied
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="h-5 w-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M4.5 12.75l6 6 9-13.5"
+                            />
+                          </svg>
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
@@ -310,7 +443,7 @@ export default function Halls() {
           {/* </div> */}
         </div>
       </div>
-      {!hall && <Loader />}
+      {hall ? <></> : <Loader />}
     </>
   );
 }

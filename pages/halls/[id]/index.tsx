@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { collection, getDoc, doc } from "firebase/firestore/lite";
@@ -143,8 +144,8 @@ export default function Halls() {
             </div>
             {tabDetails == "description" && (
               <div>
-                <div className="flex w-full rounded p-2 mx-auto flex-col gap-2 ">
-                  <div className="flex flex-row gap-2 border-b border-b-sky-50">
+                <div className="flex w-full rounded p-2 mx-auto flex-col">
+                  <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                       Capacity:
                     </div>
@@ -152,7 +153,7 @@ export default function Halls() {
                       {hall?.capacity} people
                     </div>
                   </div>
-                  <div className="flex flex-row gap-2 border-b border-b-sky-50">
+                  <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                       location description:
                     </div>
@@ -160,13 +161,13 @@ export default function Halls() {
                       {hall?.locationDescription}
                     </div>
                   </div>
-                  {/* <div className="flex flex-row gap-2 border-b border-b-sky-50">
-                <div className="font-[800] text-[14px] w-[100px] text-gray-800">
-                  Hall area :
-                </div>
-                <div className="font-[300] text-[14px]">200 square meters</div>
-              </div> */}
-                  <div className="flex flex-row gap-2 border-b border-b-sky-50">
+                  {/* <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
+                    <div className="font-[800] text-[14px] w-[100px] text-gray-800">
+                      Hall area :
+                    </div>
+                    <div className="font-[300] text-[14px]">200 square meters</div>
+                  </div> */}
+                  <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                       Indoors:
                     </div>
@@ -174,7 +175,7 @@ export default function Halls() {
                       {hall?.indoors ? "Yes" : "No"}
                     </div>
                   </div>
-                  <div className="flex flex-row gap-2 border-b border-b-sky-50">
+                  <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                       Security:
                     </div>
@@ -182,7 +183,7 @@ export default function Halls() {
                       {hall?.hasSecurity ? "Yes" : "No"}
                     </div>
                   </div>
-                  <div className="flex flex-row gap-2 border-b border-b-sky-50">
+                  <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                       Additionals:
                     </div>
@@ -192,7 +193,7 @@ export default function Halls() {
                       ))}
                     </div>
                   </div>
-                  <div className="flex flex-row gap-2 border-b border-b-sky-50">
+                  <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                       Car packing space:
                     </div>
@@ -200,21 +201,22 @@ export default function Halls() {
                       {hall?.hasCarParkingSpace ? "Yes" : "No"}
                     </div>
                   </div>
-                  <div className="flex flex-row gap-2 border-b border-b-sky-50">
+                  <div className="flex flex-row items-center py-1 gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                       Call for booking:
                     </div>
                     <div className="font-[300] text-[14px]">
                       {hall?.phoneNumber}
                     </div>
+                    <div className="bg-sky-500 p-2 px-4 cursor-pointer hover:bg-sky-500/60 duration-150 rounded-lg ml-auto">copy number</div>
                   </div>
-                  <div className="flex flex-row gap-2 border-b border-b-sky-50">
+                  <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                       Email:
                     </div>
                     <div className="font-[300] text-[14px]">{hall?.email}</div>
                   </div>
-                  <div className="flex flex-row gap-2 border-b border-b-sky-50">
+                  <div className="flex flex-row gap-2 py-2 border-b border-b-black/20">
                     <div className="font-[800] text-[14px] w-[100px] text-gray-800">
                       Address:
                     </div>
@@ -230,7 +232,7 @@ export default function Halls() {
                 <div className="text-[12px] py-5">
                   The prices mentioned bellow are for a time frame of 24 hours
                 </div>
-                <div className="flex flex-row gap-2 border-b border-b-sky-50 ">
+                <div className="flex flex-row gap-2 py-2 border-b border-b-black/20 ">
                   <div className="font-[700] text-[14px] w-[200px] text-gray-800">
                     Caution
                   </div>
@@ -238,7 +240,7 @@ export default function Halls() {
                     {hall?.caution} FCFA
                   </div>
                 </div>
-                <div className="flex flex-row gap-2 border-b border-b-sky-50 ">
+                <div className="flex flex-row gap-2 py-2 border-b border-b-black/20 ">
                   <div className="font-[700] text-[14px] w-[200px] text-gray-800">
                     Cleaning fee
                   </div>
@@ -249,7 +251,7 @@ export default function Halls() {
                 {hall?.pricing?.map((elem: any, index: any) => (
                   <div
                     key={index}
-                    className="flex flex-row gap-2 border-b border-b-sky-50 "
+                    className="flex flex-row gap-2 py-2 border-b border-b-black/20 "
                   >
                     <div className="font-[700] text-[14px] w-[200px] text-gray-800">
                       {elem?.service}
@@ -293,6 +295,18 @@ export default function Halls() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+          <img
+            onClick={() => {
+              router.push(
+                `https://api.whatsapp.com/send/?phone=${hall?.phoneNumber.replace(
+                  "+",
+                  ""
+                )}&text&type=phone_number&app_absent=0`
+              );
+            }}
+            src="/whatsapp.png"
+            className="w-12 md:hidden shadow-2xl rounded-full fixed cursor-pointer bottom-7 right-7 h-12"
+          />
           {/* </div> */}
         </div>
       </div>

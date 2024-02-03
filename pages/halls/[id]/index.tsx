@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { collection, getDoc, doc } from "firebase/firestore/lite";
 import { db } from "../../../firebase";
+import Loader from "@/components/Footer copy";
 
 export default function Halls() {
   const { id } = useRouter().query;
@@ -45,7 +46,7 @@ export default function Halls() {
   const router = useRouter();
   return (
     <>
-      <div className="flex flex-row max-w-[1200px] mx-auto px-[20px] overflow-scroll gap-2">
+      <div className="flex flex-row max-w-[1200px] mx-auto px-[10px] overflow-scroll gap-2">
         {hall?.images.map((elem: any, index: any) => (
           <img
             key={index}
@@ -81,10 +82,10 @@ export default function Halls() {
         </div>
       )}
       <div className="flex flex-col gap-2 w-full">
-        <div className="font-[900] max-w-[1200px] mx-auto px-[20px] w-full text-center md:text-left text-[24px] text-sky-900">
+        <div className="font-[900] max-w-[1200px] mx-auto px-[10px] w-full text-center md:text-left text-[24px] text-sky-900">
           {hall?.hallName}
         </div>
-        <div className="flex flex-col md:flex-row gap-3 max-w-[1200px] justify-between mx-auto px-[20px] w-full">
+        <div className="flex flex-col md:flex-row gap-3 max-w-[1200px] justify-between mx-auto px-[10px] w-full">
           <div className="flex flex-col gap-3">
             <div className="flex flex-row gap-2 justify-center md:justify-start w-full">
               <div
@@ -295,6 +296,7 @@ export default function Halls() {
           {/* </div> */}
         </div>
       </div>
+      {!hall && <Loader />}
     </>
   );
 }

@@ -3,6 +3,7 @@ import { halls } from "@/data";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore/lite";
+import Loader from "@/components/Footer copy";
 
 export default function Halls() {
   console.log(Array(3).length);
@@ -312,6 +313,15 @@ export default function Halls() {
             </div>
           );
         })} */}
+        {hallList.length == 0 &&
+          Array(10)
+            .fill(1)
+            .map((elem, index) => (
+              <div
+                key={index}
+                className="h-[250px] w-full rounded-xl bg-white/60 animate-pulse"
+              ></div>
+            ))}
         {hallList
           ?.filter((elem) => {
             if (
@@ -340,7 +350,7 @@ export default function Halls() {
                 <div className=" h-[250px] overflow-hidden w-full ">
                   <img
                     src={elem.images[1]}
-                    className=" hover:scale-110 w-full h-full duration-200 object-cover bg-blue-50 text-transparent"
+                    className=" sm:hover:scale-110 w-full h-full duration-200 object-cover bg-blue-50 text-transparent"
                     alt="..."
                   />
                 </div>
@@ -447,12 +457,13 @@ export default function Halls() {
             );
           })}
       </div>
-      {hallList?.length == 0 ||
+      {/* {hallList?.length == 0 ||
         (hallList == undefined && (
           <div className="w-full flex items-center justify-center h-screen">
             <div className="w-[50px] h-[50px] border-[#2f2d2da0] border border-t-[#fff] animate-spin rounded-full mx-auto"></div>
           </div>
         ))}
+      {hallList.length == 0 && <Loader />} */}
     </>
   );
 }

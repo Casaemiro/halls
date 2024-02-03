@@ -16,10 +16,10 @@ export default function NavBar({ setSearchPage }: any) {
     }
   }, [searchText]);
   return (
-    <div className="w-full ">
-      <div className="flex flex-row max-w-[1200px] gap-3 px-[10px] mx-auto justify-between py-4 items-center ">
+    <div className="w-full flex flex-col ">
+      <div className="flex flex-row max-w-[1200px] w-full gap-3 px-[10px] mx-auto justify-between py-4 items-center ">
         <Link href="/">
-          <div className="font-[800] text-[32px]">halls</div>
+          <div className="font-[800] bg-black rounded-lg text-white px-2 p-1 text-[16px]">HALLS</div>
         </Link>
         {router.asPath != "/auth" && (
           <>
@@ -39,7 +39,7 @@ export default function NavBar({ setSearchPage }: any) {
                 SEARCH
               </button>
             </div> */}
-            <div className="flex bg-white/60 w-full max-w-[400px] rounded-xl items-center">
+            <div className="flex bg-white/60 w-full max-w-[400px] rounded-lg border items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -251,6 +251,9 @@ export default function NavBar({ setSearchPage }: any) {
             }
           </>
         )}
+      </div>
+      <div className="  max-w-[1200px] w-full mx-auto px-3">
+        <div className="border-b-black/20 border-b"></div>
       </div>
     </div>
   );

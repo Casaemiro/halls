@@ -2,19 +2,22 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { collection, getDoc, doc } from "firebase/firestore/lite";
-import { db } from "../../../firebase";
+import { db } from "../firebase";
 import Loader from "@/components/Footer copy";
 import Head from "next/head";
 
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 export default function Halls() {
-  const { id } = useRouter().query;
+  // const { id } = useRouter().query;
+  // const [id, setId] = useState(useSearchParams().get("id"));
   const [showImage, setShowImage] = useState(false);
   const [tabDetails, setTabDetails] = useState("description");
   const [selectedImage, setSelectedImage] = useState("description");
   const [tab, setTab] = useState("description");
   const [prevTab, setPrevTab] = useState("pricing");
   const [hall, setHall] = useState<any>();
-
+  const id = useSearchParams().get("id");
   async function getItems() {
     const docRef = doc(db, "halls", `${id}`);
     // console.log(id);
@@ -36,7 +39,10 @@ export default function Halls() {
 
   useEffect(() => {
     getItems();
-  }, []);
+  }, [id]);
+  // console.log("path",path.get("id"));
+  console.log(id);
+  console.log(hall);
 
   useEffect(() => {
     let doc: any = document;
@@ -86,6 +92,27 @@ export default function Halls() {
           content={`${process.env.NEXT_PUBLIC_APP_BASE_URL}${router.asPath}`}
         />
       </Head>
+
+      <div className="flex items-center py-2 text-xs max-w-[1200px] mx-auto px-[10px] gap-1">
+        <Link className="font-bold" href="/">halls</Link>
+        <div className="text-lg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-5 text-black/30 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </div>
+        <div className="text-black/30">{hall?.hallName}</div>
+      </div>
       <div className="flex flex-row max-w-[1200px] mx-auto px-[10px] overflow-scroll gap-2">
         {hall?.images.map((elem: any, index: any) => (
           <img
@@ -324,7 +351,7 @@ export default function Halls() {
                         <div className="flex">copy number</div>
                       ) : (
                         <span className="flex items-center justify-center gap-2">
-                          link copied
+                          number copied
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"

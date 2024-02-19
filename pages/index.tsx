@@ -343,7 +343,7 @@ export default function Halls() {
               <div
                 key={index}
                 onClick={() => {
-                  router.push(`/halls/${elem?.hallId}`);
+                  router.push(`/hall?id=${elem?.hallId}`);
                 }}
                 className="flex cursor-pointer shadow-2xl bg-white flex-col w-full rounded-xl overflow-hidden"
               >

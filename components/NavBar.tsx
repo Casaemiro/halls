@@ -15,6 +15,8 @@ export default function NavBar({ setSearchPage }: any) {
       setSearchPage(false);
     }
   }, [searchText]);
+  const [showMenu, setShowMenu] = useState(false);
+  const [spaceType, setSpaceType] = useState("Halls");
   return (
     <div className="w-full flex flex-col ">
       <div className="flex flex-row max-w-[1200px] w-full gap-3 px-[10px] mx-auto justify-between py-4 items-center ">
@@ -58,6 +60,72 @@ export default function NavBar({ setSearchPage }: any) {
               </svg>
 
               <input className="outline-none p-2 text-xs w-full bg-transparent" />
+            </div>
+            <div
+              onClick={() => {
+                setShowMenu(!showMenu);
+              }}
+              className="flex items-center relative justify-between gap-3 cursor-pointer bg-sky-500/10 border border-black/40 w-[150px] p-1 text-[14px] rounded-md"
+            >
+              <div>{spaceType}</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+              {showMenu && (
+                <div className="flex flex-col bg-white z-30 right-0 top-8 w-[200px] gap-1 absolute border border-sky-500 rounded-xl p-2">
+                  <div
+                    onClick={() => {
+                      setSpaceType("Halls");
+                    }}
+                    className="hover:bg-black/5 p-1 rounded-xl"
+                  >
+                    Halls
+                  </div>
+                  <div
+                    onClick={() => {
+                      setSpaceType("Rooms");
+                    }}
+                    className="hover:bg-black/5 p-1 rounded-xl"
+                  >
+                    Rooms
+                  </div>
+                  <div
+                    onClick={() => {
+                      setSpaceType("Studio");
+                    }}
+                    className="hover:bg-black/5 p-1 rounded-xl"
+                  >
+                    Studio
+                  </div>
+                  <div
+                    onClick={() => {
+                      setSpaceType("Hotels");
+                    }}
+                    className="hover:bg-black/5 p-1 rounded-xl"
+                  >
+                    Hotels
+                  </div>
+                  <div
+                    onClick={() => {
+                      setSpaceType("Apartments");
+                    }}
+                    className="hover:bg-black/5 p-1 rounded-xl"
+                  >
+                    Apartments
+                  </div>
+                </div>
+              )}
             </div>
             {
               <div className="hidden sm:flex flex-row gap-3">
@@ -130,7 +198,7 @@ export default function NavBar({ setSearchPage }: any) {
                       className="bg-black fixed top-0 w-full left-0 h-screen opacity-70"
                     ></div>
                     <div className="bg-white z-50 flex p-2 fixed flex-col h-screen gap-3 top-0 right-0 w-[300px]">
-                      <div className="font-[800] text-[24px] w-full text-center">
+                      <div className=" p-2 bg-sky-800/10 rounded text-sky-800 text-[16px] w-full text-center">
                         Menu
                       </div>
                       <div
@@ -138,7 +206,7 @@ export default function NavBar({ setSearchPage }: any) {
                           setMobileMenu(false);
                           router.push("/");
                         }}
-                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400 rounded-t hover:bg-slate-200"
+                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400/30 rounded-t hover:bg-slate-200"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +214,7 @@ export default function NavBar({ setSearchPage }: any) {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-6 h-6"
+                          className="w-6 h-6 text-sky-800"
                         >
                           <path
                             strokeLinecap="round"
@@ -160,13 +228,13 @@ export default function NavBar({ setSearchPage }: any) {
                         onClick={() => {
                           setMobileMenu(false);
                         }}
-                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400 rounded-t hover:bg-slate-200"
+                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400/30 rounded-t hover:bg-slate-200"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
                           fill="currentColor"
-                          className="w-6 h-6"
+                          className="w-6 h-6 text-sky-800"
                         >
                           <path
                             fillRule="evenodd"
@@ -180,7 +248,7 @@ export default function NavBar({ setSearchPage }: any) {
                         onClick={() => {
                           setMobileMenu(false);
                         }}
-                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400 rounded-t hover:bg-slate-200"
+                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400/30 rounded-t hover:bg-slate-200"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +256,7 @@ export default function NavBar({ setSearchPage }: any) {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-6 h-6"
+                          className="w-6 h-6 text-sky-800"
                         >
                           <path
                             strokeLinecap="round"
@@ -203,7 +271,7 @@ export default function NavBar({ setSearchPage }: any) {
                           setMobileMenu(false);
                           router.push("/policy");
                         }}
-                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400 rounded-t hover:bg-slate-200"
+                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400/30 rounded-t hover:bg-slate-200"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +279,7 @@ export default function NavBar({ setSearchPage }: any) {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-6 h-6"
+                          className="w-6 h-6 text-sky-800"
                         >
                           <path
                             strokeLinecap="round"
@@ -228,7 +296,7 @@ export default function NavBar({ setSearchPage }: any) {
                             "https://api.whatsapp.com/send/?phone=237681099238&text&type=phone_number&app_absent=0"
                           );
                         }}
-                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400 rounded-t hover:bg-slate-200"
+                        className="py-2 border-b flex flex-row gap-2 px-2 border-b-gray-400/30 rounded-t hover:bg-slate-200"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +304,7 @@ export default function NavBar({ setSearchPage }: any) {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-6 h-6"
+                          className="w-6 h-6 text-sky-800"
                         >
                           <path
                             strokeLinecap="round"
@@ -257,7 +325,6 @@ export default function NavBar({ setSearchPage }: any) {
       <div className="  max-w-[1200px] w-full mx-auto px-3">
         <div className="border-b-black/10 border-b"></div>
       </div>
-     
     </div>
   );
 }

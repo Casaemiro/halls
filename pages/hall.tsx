@@ -94,7 +94,9 @@ export default function Halls() {
       </Head>
 
       <div className="flex items-center py-2 text-xs max-w-[1200px] mx-auto px-[10px] gap-1">
-        <Link className="font-bold" href="/">halls</Link>
+        <Link className="font-bold" href="/">
+          halls
+        </Link>
         <div className="text-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -244,19 +246,6 @@ export default function Halls() {
               </div>
               <div
                 onClick={() => {
-                  setTab("extras");
-                  setTabDetails("extras");
-                  let doc: any = document;
-                  doc.getElementById(prevTab).style.backgroundColor = "white";
-                  doc.getElementById(prevTab).style.color = "black";
-                }}
-                id="extras"
-                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[10px]"
-              >
-                Extras
-              </div>
-              <div
-                onClick={() => {
                   setTab("refund-policy");
                   setTabDetails("refund-policy");
                   let doc: any = document;
@@ -267,6 +256,19 @@ export default function Halls() {
                 className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[10px]"
               >
                 Refund Policy
+              </div>
+              <div
+                onClick={() => {
+                  setTab("comments");
+                  setTabDetails("comments");
+                  let doc: any = document;
+                  doc.getElementById(prevTab).style.backgroundColor = "white";
+                  doc.getElementById(prevTab).style.color = "black";
+                }}
+                id="comments"
+                className="rounded bg-white px-3 py-2 font-[600] cursor-pointer text-[10px]"
+              >
+                Comments
               </div>
             </div>
             {tabDetails == "description" && (
@@ -423,7 +425,11 @@ export default function Halls() {
                 ))}
               </div>
             )}
-            {tabDetails == "extras" && <div>Extras</div>}
+            {tabDetails == "comments" && (
+              <div className="p-3 w-full rounded-lg bg-white/40">
+                <div className="flex flex-col gap-2 items-end"><textarea className="w-full h-32 rounded-lg bg-transparent border border-black/20 p-2 outline-none"></textarea><button className="rounded-lg p-2 bg-black/40 px-6 ml-auto">Send</button></div>
+              </div>
+            )}
             {tabDetails == "refund-policy" && (
               <div className="w-full md:w-[400px] my-5 mx-auto">
                 Thank you very much for considering us. We do not do a full

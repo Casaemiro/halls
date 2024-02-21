@@ -93,7 +93,7 @@ export default function Halls() {
         />
       </Head>
 
-      <div className="flex items-center py-2 text-xs max-w-[1200px] mx-auto px-[10px] gap-1">
+      <div className="flex items-center py-3 text-xs max-w-[1200px] mx-auto px-[10px] gap-1">
         <Link className="font-bold" href="/">
           halls
         </Link>

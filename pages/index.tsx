@@ -3,7 +3,7 @@ import { halls } from "@/data";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore/lite";
-import Loader from "@/components/Footer copy";
+import Loader from "@/components/Pricing";
 
 export default function Halls() {
   console.log(Array(3).length);

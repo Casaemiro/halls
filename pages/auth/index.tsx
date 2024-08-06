@@ -1,4 +1,4 @@
-import Loader from "@/components/Footer copy";
+import Loader from "@/components/Pricing";
 import { signIn } from "@/utils/functions/authentication";
 import { useState } from "react";
 

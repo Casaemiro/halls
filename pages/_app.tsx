@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       />
       <NavBar setSearchPage={setSearchPage} />
       <Component {...pageProps} searchPage={searchPage} />
-      {!/auth/.test(router.asPath) && <Footer />}
+      {!/auth/.test(router.asPath) &&(!/admin/.test(router.asPath) && <Footer />)}
     </div>
   );
 }

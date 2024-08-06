@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { collection, getDoc, doc } from "firebase/firestore/lite";
 import { db } from "../firebase";
-import Loader from "@/components/Footer copy";
+import Loader from "@/components/Loader";
 import Head from "next/head";
 
 import { useSearchParams } from "next/navigation";
@@ -146,7 +146,7 @@ export default function Halls() {
             onClick={() => {
               setShowImage(false);
             }}
-            className="bg-black opacity-75 fixed top-0 left-0 w-full h-screen -z-10"
+            className="bg-black/40 backdrop-blur-md fixed top-0 left-0 w-full h-screen -z-10"
           ></div>
         </div>
       )}

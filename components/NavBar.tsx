@@ -50,7 +50,7 @@ export default function NavBar({ setSearchPage }: any) {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6 ml-2 "
+                className="w-6 h-6 text-black/50 ml-2 "
               >
                 <path
                   strokeLinecap="round"

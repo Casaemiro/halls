@@ -35,7 +35,7 @@ export default function Document() {
       <title>halls</title>
 
       <link rel="icon" href="/logo.png" />
-      <body className="bg-blue-100">
+      <body className="bg-blue-100 min-h-screen">
         <Main />
         <NextScript />
       </body>
